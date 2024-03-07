@@ -1,9 +1,16 @@
 from __future__ import annotations
 
 # python built-in imports
-from dataclasses import dataclass, field
-from datetime import datetime
+from dataclasses import dataclass
 
 
-class Dummy:  # TODO: this class is to be removed
-    pass
+@dataclass
+class Dummy:
+    title: str
+    score: float
+    score_phrase: str
+    platform: str
+    genre: str
+    release_year: int
+    release_month: int
+    release_day: int

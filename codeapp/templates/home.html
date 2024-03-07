@@ -1,9 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 <h1 id="homepage_header">Final project</h1>
+<table class="table table-bordered table-hovered">
+    <thead>
+        <tr>
+            <th>Genre</th>
+            <th>Number of games</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for genre, count in counter.items()|sort(attribute="1", reverse=True) %}
+        <tr>
+            <td>{{genre}}</td>
+            <td>{{count}}</td>            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
-<!-- TODO -->
-<h2>Insert your table here!</h2>
+
 
 <img src="{{ url_for('bp.image') }}" class="rounded mx-auto d-block" alt="Plot with analysis">
 
